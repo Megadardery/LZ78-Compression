@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="629c4b69-372d-480f-8d0b-16c1c41abd0e" name="Default Changelist" comment="full seperation from belal's work" />
+    <list default="true" id="629c4b69-372d-480f-8d0b-16c1c41abd0e" name="Default Changelist" comment="full seperation from belal's work">
+      <change afterPath="$PROJECT_DIR$/src/AdaptiveHuffman.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HuffmanNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HuffmanTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LZ78-Compression.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Multimedia-Compression.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LZ78.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LZ78.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,11 +23,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/LZ78-Compression" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1S3bvCOFQmN7REz1Z4KWiJpjbFT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -24,11 +36,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
       <recent name="com.company" />
     </key>
   </component>
@@ -44,17 +59,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.MainCMD">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="LZ78-Compression" />
+      <module name="Multimedia-Compression" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="MainCMD" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="LZ78-Compression" />
+      <module name="Multimedia-Compression" />
       <option name="PROGRAM_PARAMETERS" value="--cmd" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -100,6 +115,13 @@
       <workItem from="1571044506911" duration="4617000" />
       <workItem from="1571082370203" duration="301000" />
       <workItem from="1571152452819" duration="7386000" />
+      <workItem from="1571301459179" duration="739000" />
+      <workItem from="1571306840328" duration="13000" />
+      <workItem from="1571306868749" duration="1546000" />
+      <workItem from="1572341839687" duration="875000" />
+      <workItem from="1572373888029" duration="13997000" />
+      <workItem from="1572426209037" duration="309000" />
+      <workItem from="1572458832946" duration="6237000" />
     </task>
     <task id="LOCAL-00001" summary="prepared byte-level compression">
       <created>1571048851211</created>
@@ -142,6 +164,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/LZ78-Compression" />
+    </ignored-roots>
     <MESSAGE value="prepared byte-level compression" />
     <MESSAGE value="full seperation from belal's work" />
     <option name="LAST_COMMIT_MESSAGE" value="full seperation from belal's work" />

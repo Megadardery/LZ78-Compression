@@ -14,7 +14,7 @@ public class LZ78 {
             data.add(new Pair<>((int) compressed[i], (char) compressed[i + 1]));
         }
 
-        char[] ret = decompress(data);
+        char[] ret = decompress(data).toCharArray();
         byte[] byteArray = new byte[ret.length];
         for (int i = 0; i < ret.length; i++) {
             byteArray[i] = (byte) ret[i];
@@ -30,11 +30,11 @@ public class LZ78 {
         //CharBuffer charBuffer = ByteBuffer.wrap(message).asCharBuffer();
         //char[] charArray = new char[charBuffer.remaining()];
         //charBuffer.get(charArray);
-        List<Pair<Integer, Character>> ret = compress(charArray);
+        List<Pair<Integer, Character>> ret = compress(String.valueOf(charArray));
         List<Byte> data = new ArrayList<>();
-        for (int i = 0; i < ret.size(); i++) {
-            data.add(ret.get(i).getKey().byteValue());
-            Character res = ret.get(i).getValue();
+        for (Pair<Integer, Character> pair : ret) {
+            data.add(pair.getKey().byteValue());
+            Character res = pair.getValue();
             if (res == null) res = '\0';
             data.add((byte) res.charValue());
         }
@@ -45,7 +45,7 @@ public class LZ78 {
         return arr;
     }
 
-    public static char[] decompress(List<Pair<Integer, Character>> compressed) throws Exception {
+    public static String decompress(List<Pair<Integer, Character>> compressed) throws Exception {
         if (lastDictionary == null) lastDictionary = new ArrayList<>();
         else lastDictionary.clear();
 
@@ -67,10 +67,10 @@ public class LZ78 {
             }
             lastDictionary.add(entry);
         }
-        return message.toString().toCharArray();
+        return message.toString();
     }
 
-    public static List<Pair<Integer, Character>> compress(char[] message) {
+    public static List<Pair<Integer, Character>> compress(String message) {
         if (lastDictionary == null) lastDictionary = new ArrayList<>();
         else lastDictionary.clear();
         HashMap<String, Integer> dictionary = new HashMap<>();
@@ -79,7 +79,7 @@ public class LZ78 {
         StringBuilder window = new StringBuilder();
         int matchIdx = 0;
         int directoryIdx = 1;
-        for (char c : message) {
+        for (char c : message.toCharArray()) {
             window.append(c);
             int found = dictionary.getOrDefault(window.toString(), 0);
             if (found != 0) {

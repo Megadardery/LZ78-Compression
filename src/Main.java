@@ -86,7 +86,7 @@ public class Main {
 
     private void btnCompress_Clicked(ActionEvent e) {
         String msg = txtRaw.getText();
-        List<Pair<Integer, Character>> ret = LZ78.compress(msg.toCharArray());
+        List<Pair<Integer, Character>> ret = LZ78.compress(msg);
         dlm.clear();
         for (int i = 0; i < LZ78.getLastDictionary().size(); ++i)
             dlm.addElement(i + " : " + LZ78.getLastDictionary().get(i));
@@ -110,7 +110,7 @@ public class Main {
         }
         String msg;
         try {
-            msg = new String(LZ78.decompress(tags));
+            msg = LZ78.decompress(tags);
             dlm.clear();
             for (int i = 0; i < LZ78.getLastDictionary().size(); ++i)
                 dlm.addElement(i + " : " + LZ78.getLastDictionary().get(i));

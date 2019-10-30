@@ -8,15 +8,17 @@ import java.util.Scanner;
 public class Console {
     private static Scanner in = new Scanner(System.in);
     public static void showConsoleMenu() {
-
-        System.out.println("This is Dardery's version of the LZ78 compression assignment");
+        System.out.println("This is Dardery's version of the LZ78 and Huffman compression assignment");
         System.out.println("--------------------------------");
         char response;
         do {
-            System.out.println("1 - Compress a line of text");
-            System.out.println("2 - Decompress a line of text");
-            System.out.println("3 - Compress a file");
-            System.out.println("4 - Decompress a file");
+            System.out.println("1 - Compress a line of text (LZ78)");
+            System.out.println("2 - Decompress a line of text (LZ78)");
+            System.out.println("3 - Compress a file (LZ78)");
+            System.out.println("4 - Decompress a file (LZ78)");
+            System.out.println("5 - Compress a line of text (Adaptive Huffman)");
+            System.out.println("6 - Decompress a line of text (Adaptive Huffman)");
+
             System.out.println("0 - Stop and exit");
             response = in.next().charAt(0);
             in.nextLine();
@@ -24,7 +26,7 @@ public class Console {
                 case '1':
                     System.out.println("Enter your line of text");
                     String message = in.nextLine();
-                    List<Pair<Integer, Character>> compressed = LZ78.compress(message.toCharArray());
+                    List<Pair<Integer, Character>> compressed = LZ78.compress(message);
                     System.out.println("Ok, here is the result:");
                     for (Pair<Integer, Character> p : compressed) {
                         System.out.print(p.getKey());
@@ -48,7 +50,7 @@ public class Console {
                         in.nextLine();
                         System.out.println(LZ78.decompress(tags));
                     } catch (Exception ex) {
-                        System.out.print("Tags are wack.. better luck next time.");
+                        System.out.println("Tags are wack.. better luck next time.");
                         System.out.println("Oh you want a formal text of the problem? Okay...");
                         System.out.println(ex.getMessage());
                     }
@@ -75,6 +77,23 @@ public class Console {
                         Files.write(Paths.get(outputD),LZ78.decompressFromArray(Files.readAllBytes(Paths.get(inputD))));
                     } catch (Exception e) {
                         e.printStackTrace();
+                    }
+                    break;
+                case '5':
+                    System.out.println("Enter your line of text");
+                    message = in.nextLine();
+                    System.out.println("Ok, here is the result:");
+                    System.out.println(AdaptiveHuffman.compress(message));
+                    break;
+                case '6':
+                    System.out.println("Enter your compressed binary line");
+                    message = in.nextLine();
+                    try {
+                        System.out.println(AdaptiveHuffman.decompress(message));
+                    } catch (Exception ex) {
+                        System.out.println("Binary is wack.. better luck next time.");
+                        System.out.println("Oh you want a formal text of the problem? Okay...");
+                        ex.printStackTrace();
                     }
                     break;
                 case '0':
